@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meredith Hilmayer - Mental Training for D1 Athletes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: white;
+        }
+
+        nav {
+            background: white;
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FF6B35;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FF6B35;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #FF6B35;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: #555;
+            max-width: 800px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .hero-link {
+            color: #FF6B35;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #FF6B35;
+            padding-bottom: 0.3rem;
+            transition: all 0.3s;
+        }
+
+        .hero-link:hover {
+            color: #004E89;
+            border-bottom-color: #004E89;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.8rem 0;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .podcast-hero {
+            background: linear-gradient(135deg, #FFF6F3 0%, #FFFFFF 100%);
+            padding: 3rem 2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-img {
+            height: 350px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .podcast-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .podcast-img {
+            height: 350px;
+            background: #FF6B35;
+            border-radius: 8px;
+        }
+
+        .podcast-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .podcast-text p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .podcast-text ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .podcast-text li {
+            margin-bottom: 0.7rem;
+            line-height: 1.7;
+        }
+
+        .podcast-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            background: #FF6B35;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #004E89;
+            transform: translateY(-2px);
+        }
+
+        .episodes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .episode-card {
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #FF6B35;
+        }
+
+        .episode-card h3 {
+            color: #004E89;
+            margin-top: 0;
+        }
+
+        .episode-label {
+            font-size: 0.85rem;
+            color: #FF6B35;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .episode-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .who-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .who-item h3 {
+            color: #FF6B35;
+            margin-top: 0;
+        }
+
+        .who-item p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .who-item ul {
+            margin: 1rem 0 0 1.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .who-item li {
+            margin-bottom: 0.6rem;
+            line-height: 1.6;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 4px solid #FF6B35;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .connect-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 700px;
+            margin: 2rem auto 0;
+        }
+
+        .connect-card {
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #222;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .connect-card:hover {
+            border-color: #FF6B35;
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .connect-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #FF6B35;
+            margin-bottom: 0.5rem;
+        }
+
+        .connect-handle {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        .host-section {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .host-section h3 {
+            margin-top: 0;
+        }
+
+        .host-list {
+            margin: 1rem 0 0 1.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .host-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid, .podcast-grid, .who-section, .episodes, .connect-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            nav a {
+                margin-left: 1.2rem;
+                font-size: 0.8rem;
+            }
+
+            .about-img, .podcast-img {
+                height: 250px;
+            }
+
+            .section {
+                padding: 2.5rem 2rem;
+            }
+
+            .hero-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">Mental Training</div>
+            <div>
+                <a href="#about">About</a>
+                <a href="#podcast">Podcast</a>
+                <a href="#episodes">Episodes</a>
+                <a href="#who">Who It's For</a>
+                <a href="#connect">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Mental training for D1 athletes</h1>
+        <p class="hero-tagline">Where sports psychology meets real D1 life</p>
+        <p class="hero-desc">I'm Meredith, a 4x national Canadian champion rower at University of Miami. I've worked with sports psychologists to build real mental training tools that work. Now I'm sharing them on a podcast — for athletes, coaches, and anyone grinding at a high level.</p>
+        <div class="hero-links">
+            <a href="https://www.tiktok.com/@merhilmayer" class="hero-link">TikTok</a>
+            <a href="https://www.instagram.com/mindgameexplained/" class="hero-link">Instagram</a>
+            <a href="https://miamihurricanes.com/roster/meredith-hilmayer/" class="hero-link">Miami Roster</a>
+        </div>
+    </section>
+
+    <section class="podcast-hero">
+        <div class="section" style="padding: 0; padding-bottom: 1rem;">
+            <h2>New podcast — now on Spotify</h2>
+            <p class="hero-desc">An educational podcast helping D1 athletes, coaches, and anyone competing at a high level understand the mental strategies that actually work — and how to apply sports psychology in real life.</p>
+            <div class="podcast-buttons">
+                <a href="https://open.spotify.com/show/33At980PrVxHLvnewEtNfZ?si=dRd3uBw-TZyzNzp_lYsvOA" class="btn">Listen on Spotify</a>
+                <a href="https://www.instagram.com/mindgameexplained/" class="btn">Follow on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I'm a Division 1 rower at the University of Miami and a 4x National Canadian Champion. My athletic journey taught me that success isn't just about what happens on the water—it's about building the mental resilience that carries you through everything.</p>
+                
+                <p>For years, I've worked with sports psychologists to develop real mental training techniques. Not motivational Instagram quotes. Actual psychological tools that work when you're under pressure.</p>
+
+                <p>As a Mental Health Ambassador at Miami, I'm committed to breaking stigma around mental health in college athletics. I work with student-athletes to show them that seeking support isn't weakness—it's strategy.</p>
+
+                <p>I represent Canada on the national rowing team. I create honest content on TikTok about D1 life. And now I'm launching this podcast to share what I've learned with other athletes.</p>
+
+                <div class="host-section">
+                    <h3>Built by someone who lives this</h3>
+                    <ul class="host-list">
+                        <li>D1 athlete — University of Miami</li>
+                        <li>4x National Canadian Champion Rower</li>
+                        <li>Canadian National Team</li>
+                        <li>Mental Health Ambassador</li>
+                        <li>Works with sports psychologists</li>
+                    </ul>
+                </div>
+
+                <div class="host-section" style="margin-top: 1.5rem;">
+                    <h3>Education</h3>
+                    <ul class="host-list">
+                        <li>Bachelor's Degree in Psychology — University of Miami</li>
+                        <li>Sport Medicine Minor</li>
+                        <li>Master's in Clinical Mental Health Counseling — Rollins College</li>
+                        <li>Concentration in Neuroscience & Sports Psychology</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="about-img">
+                <img src="IMG_5752.JPG" alt="Meredith - About" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="podcast">
+        <h2>The podcast</h2>
+        <div class="podcast-grid">
+            <div class="podcast-img">
+                <img src="IMG_6608.jpg" alt="Meredith - Podcast" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="podcast-text">
+                <p>I'm going deep on the exact techniques I've used with sports psychologists to become a 4x national Canadian champion. From visualization and stress management to building confidence when it matters most.</p>
+                
+                <p><strong>What you'll get:</strong></p>
+                <ul>
+                    <li>How to use sports psychology in your training</li>
+                    <li>Real athlete stories from D1 and national teams</li>
+                    <li>Practical mental tools you can use today</li>
+                    <li>Honest conversations about mental health in sports</li>
+                </ul>
+
+                <p><strong>Episodes:</strong> Weekly drops. Free everywhere you listen.</p>
+
+                <div class="podcast-buttons">
+                    <a href="https://open.spotify.com/show/33At980PrVxHLvnewEtNfZ?si=dRd3uBw-TZyzNzp_lYsvOA" class="btn">Listen on Spotify</a>
+                    <a href="https://www.instagram.com/mindgameexplained/" class="btn">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>What we cover</h2>
+        <div class="podcast-grid">
+            <div>
+                <h3>01. How mental training actually works</h3>
+                <p class="episode-desc">Breaking down the psychology behind performance. What works, what doesn't, and why.</p>
+            </div>
+            <div>
+                <h3>02. Real athlete stories</h3>
+                <p class="episode-desc">Conversations with D1 athletes and national team members about their mental game, breakthroughs, and struggles.</p>
+            </div>
+            <div>
+                <h3>03. Practical tools you can use</h3>
+                <p class="episode-desc">Visualization, stress management, confidence building, focus techniques. Step-by-step, actionable strategies.</p>
+            </div>
+            <div>
+                <h3>04. Mental health in sports</h3>
+                <p class="episode-desc">Honest conversations about burnout, anxiety, identity, and why asking for help is a strength.</p>
+            </div>
+        </div>
+
+        <div class="quote" style="margin-top: 3rem;">
+            "Mental training relies on strategy, personalization, and real support — things that take more than an app alone."
+        </div>
+    </section>
+
+    <section class="section" id="episodes" style="background: #f9f9f9;">
+        <h2>Episodes available now</h2>
+        <div class="episodes">
+            <div class="episode-card">
+                <div class="episode-label">Foundation</div>
+                <h3>What is sports psychology? A beginner's guide</h3>
+                <p class="episode-desc">Why mental training matters. How I learned it. Where you should start if you're interested in this.</p>
+            </div>
+            <div class="episode-card">
+                <div class="episode-label">Foundation</div>
+                <h3>Visualization vs. meditation — understanding the difference</h3>
+                <p class="episode-desc">What actually works. When to use which. Science behind it. How I use both in my training.</p>
+            </div>
+            <div class="episode-card">
+                <div class="episode-label">Real Talk</div>
+                <h3>Burnout and anxiety — the side of D1 nobody talks about</h3>
+                <p class="episode-desc">My story. What I learned. What helped. What didn't. Why being a champion doesn't mean you're fine.</p>
+            </div>
+            <div class="episode-card">
+                <div class="episode-label">Tools</div>
+                <h3>Building mental resilience — practical techniques you can use today</h3>
+                <p class="episode-desc">Stress management. Focus. Confidence building. Everything I use with sports psychologists, step by step.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="who">
+        <h2>Who it's for</h2>
+        <div class="who-section">
+            <div class="who-item">
+                <h3>Athletes</h3>
+                <p>Whether you're competing at D1, club, or just wanting to get better:</p>
+                <ul>
+                    <li>Understand what mental training actually is</li>
+                    <li>Get practical tools to use in training and competition</li>
+                    <li>Learn from real D1 athletes and national team members</li>
+                    <li>Know when to use apps and when to work with a psychologist</li>
+                    <li>Build a smarter mental routine between sessions</li>
+                </ul>
+            </div>
+            <div class="who-item">
+                <h3>Coaches & Support Staff</h3>
+                <p>If you're helping athletes reach their best:</p>
+                <ul>
+                    <li>Learn how to integrate mental training in your program</li>
+                    <li>Understand what athletes are really struggling with</li>
+                    <li>Get frameworks for talking about mental health</li>
+                    <li>Build a culture where seeking help is normal</li>
+                    <li>Stay current on what's working in sports psychology</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section connect-section" id="connect">
+        <h2>Let's connect</h2>
+        <p style="color: #666; margin-bottom: 1.5rem; font-size: 1rem;">Follow for mental training tips, D1 life, and new episodes</p>
+        <div class="connect-grid">
+            <a href="https://www.tiktok.com/@merhilmayer" class="connect-card">
+                <div class="connect-title">TikTok</div>
+                <div class="connect-handle">@merhilmayer</div>
+            </a>
+            <a href="https://www.instagram.com/mindgameexplained/" class="connect-card">
+                <div class="connect-title">Instagram</div>
+                <div class="connect-handle">@meredith.hilmayer</div>
+            </a>
+            <a href="https://miamihurricanes.com/roster/meredith-hilmayer/" class="connect-card">
+                <div class="connect-title">Miami Roster</div>
+                <div class="connect-handle">Go Canes</div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Mental Training for D1 Athletes. Quiet grind. Big impact. 2025</p>
+    </footer>
+</body>
+</html>
